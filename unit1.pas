@@ -17,6 +17,7 @@ type
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
+    Button5: TButton;
     Edit1: TEdit;
     Image1: TImage;
     Label1: TLabel;
@@ -25,6 +26,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure InputKeyPress(Sender: TObject; var Key: char);
   private
@@ -65,6 +67,11 @@ procedure TForm1.Button4Click(Sender: TObject);
 begin
   Label1.caption:= FloatToStr(Baum.vor(StrToFloat(Edit1.Text)));
 
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+  Label1.caption:= FloatToStr(Baum.zurueck(StrToFloat(Edit1.Text)));
 end;
 
 procedure TForm1.InputKeyPress(Sender: TObject; var Key: char);
