@@ -19,7 +19,7 @@ end;
   procedure entf(b:TBrokkoli);
   procedure entfernen(K:Extended);
   function vor(l:Extended):Extended;
-  //procedure zurueck(l:Extended);
+  function zurueck(l:Extended):Extended;
   function suchen(K:Extended):TBrokkoli;
   procedure showbaum(im:TImage);
   constructor create;
@@ -247,7 +247,18 @@ function mini (r:TBrokkoli):TBrokkoli;
        end
   end;
 begin
+if (ausgabeW = 'rechts') then
+begin
   Result:=(mini(P.rub.rub)).element
+
+  end
+else if (ausgabeW = 'links') then
+begin
+  Result:=(mini(P.lub.rub)).element
+
+  end
+else
+  result:=(mini(P.rub).element)
 end;
 
 function TBaum.vor(l:Extended):Extended;
@@ -255,11 +266,11 @@ begin
      result := weiter(suchen(l))
 end;
 
-{procedure TBaum.zurueck(K:Extended);
+function TBaum.zurueck(K:Extended):Extended;
 begin
-     tilbage(suchen(K))
+     result:=(suchen(K).element)
 end;
-}
+
 {
 var mew:TBrokkoli;
 begin

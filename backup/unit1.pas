@@ -69,7 +69,7 @@ end;
 
 procedure TForm1.InputKeyPress(Sender: TObject; var Key: char);
 begin
-  if (key = #13) then Baum.entfernen(StrToFloat(Edit1.Text));
+  if (key = #13) then Baum.einfuegen(StrToFloat(Edit1.Text));
   Baum.Showbaum(Image1);
 end;
 
